@@ -55,11 +55,39 @@ if [[ -e /usr/local/share/chruby ]]; then
   # Automatically switch rubies
   source '/usr/local/share/chruby/auto.sh'
 
+  # Load plugins
+  if [[ -e ~/.chruby-default-gems/ ]]; then
+    source ~/.chruby-default-gems/chruby-default-gems.sh
+  fi
+
   # Set a default ruby if a .ruby-version file exists in the home dir
   if [[ -f ~/.ruby-version ]]; then
     chruby $(cat ~/.ruby-version)
   fi
 fi
+
+# Shortcut for `bundle exec rails` and `bundle exec rake`.
+# If bin/rails and bin/rake are available, use them instead as they are much
+# faster to execute than `bundle exec`.
+function r() {
+  if [[ "g|generate|c|console|s|server|db|dbconsole|r|runner|new" =~ $1 ]]; then
+    if [ -x bin/rails ]; then
+      bin/rails "$@"
+    elif [ -x script/rails ]; then
+      script/rails "$@"
+    else
+      rails "$@"
+    fi
+  else
+    if [ -x bin/rake ]; then
+      bin/rake "$@"
+    elif [ -x script/rake ]; then
+      script/rake "$@"
+    else
+      rake "$@"
+    fi
+  fi
+}
 
 
 # Postgres
@@ -88,3 +116,15 @@ source $ZSH/oh-my-zsh.sh
 
 # Docker
 export DOCKER_HOST=tcp://192.168.59.103:2375
+
+# Aliases
+alias b='bundle exec'
+# Change to the root level directory the current git repository
+alias cdg='cd $(git rev-parse --show-toplevel || pwd)'
+alias diff=colordiff
+alias get='git'
+alias ls='ls -hFG'
+alias l='ls'
+alias la='ls -la'
+alias ll='ls -l'
+alias top='top -s 5 -o cpu -stats pid,user,command,cpu,rsize,vsize,threads,state'

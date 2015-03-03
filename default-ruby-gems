@@ -1,0 +1,7 @@
+# brew install https://raw.github.com/bronson/chruby-default-gems/master/homebrew/chruby-default-gems.rb --HEAD
+awesome_print
+bundler-audit
+pre-commit
+rubocop
+scss-lint
+pry
