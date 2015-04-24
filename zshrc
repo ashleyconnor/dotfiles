@@ -97,7 +97,11 @@ PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 source "/usr/local/bin/virtualenvwrapper.sh"
 
 # Java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+if [ -d $HOME/.jenv ]; then
+  export PATH="$HOME/.jenv/bin:$PATH"
+fi
+#if which jenv > /dev/null; then eval "$(jenv init -)"; fi
 
 # Node Package Manager
 export PATH="/usr/local/share/npm/bin:$PATH"
