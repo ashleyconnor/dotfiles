@@ -1,16 +1,8 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# init antibody
+source <(antibody init)
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(osx git brew yarn zsh-syntax-highlighting)
+# do not prompt to update (update via antibody)
+DISABLE_AUTO_UPDATE="true"
 
 # Customize to your needs...
 export PATH=/Users/ashleyconnor/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin
@@ -32,10 +24,6 @@ HISTFILE=~/.zhistory
 HISTSIZE=4096
 SAVEHIST=4096
 
-# # awesome cd movements from zshkit
-# setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
-# DIRSTACKSIZE=5
-
 # Enable extended globbing
 setopt extendedglob
 
@@ -49,8 +37,6 @@ alias vi=nvim
 
 # Homebrew fix
 export PATH="$(brew --prefix)/bin:$PATH"
-
-source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias b='bundle exec'
@@ -69,13 +55,14 @@ alias reset=clear && printf '[3J'
 export PATH="/usr/local/share/dotnet:$PATH"
 alias unzipall='for z in *.zip; do unzip -o $z; done'
 
-source '/Users/ashleyconnor/.zsh/iterm2.zsh'
-# source ~/.bin/tmuxinator.zsh
+# Set name of the theme to load.
+ZSH_THEME="robbyrussell"
+# set oh-my-zsh home
+export ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# bundle and apply antigen plugins
+antibody bundle < ~/.zsh_plugins
 
-. $HOME/.asdf/asdf.sh
+# enable Oh My Zsh
+source $ZSH/oh-my-zsh.sh
 
-. $HOME/.asdf/completions/asdf.bash
-
-source ~/.zsh/zsh-peco-history/zsh-peco-history.zsh

@@ -1,0 +1,13 @@
+robbyrussell/oh-my-zsh
+
+robbyrussell/oh-my-zsh path:plugins/asdf
+robbyrussell/oh-my-zsh path:plugins/osx
+robbyrussell/oh-my-zsh path:plugins/git
+robbyrussell/oh-my-zsh path:plugins/colored-man-pages
+robbyrussell/oh-my-zsh path:plugins/battery
+robbyrussell/oh-my-zsh path:plugins/aws
+
+kiurchv/asdf.plugin.zsh
+
+zsh-users/zsh-syntax-highlighting
+jimeh/zsh-peco-history
