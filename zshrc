@@ -60,9 +60,8 @@ ZSH_THEME="robbyrussell"
 # set oh-my-zsh home
 export ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
 
-# bundle and apply antigen plugins
-antibody bundle < ~/.zsh_plugins
-
 # enable Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
+# bundle and apply antigen plugins
+antibody bundle < ~/.zsh_plugins
