@@ -7,6 +7,9 @@ DISABLE_AUTO_UPDATE="true"
 # Customize to your needs...
 export PATH=/Users/ashleyconnor/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin
 
+# functions
+source $HOME/dotfiles/functions.sh
+
 # completion
 autoload -U compinit
 compinit
@@ -59,9 +62,19 @@ alias unzipall='for z in *.zip; do unzip -o $z; done'
 ZSH_THEME="robbyrussell"
 # set oh-my-zsh home
 export ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
-
+# antibody bundle oh-my-zsh
+antibody bundle robbyrussell/oh-my-zsh
 # enable Oh My Zsh
 source $ZSH/oh-my-zsh.sh
 
 # bundle and apply antigen plugins
 antibody bundle < ~/.zsh_plugins
+
+# dotenv
+eval "$(direnv hook zsh)"
+
+# Elixir prompt
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+# Rust
+export PATH=$PATH:/Users/ashleyconno/.cargo/bin
