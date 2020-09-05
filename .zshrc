@@ -8,7 +8,7 @@ DISABLE_AUTO_UPDATE="true"
 export PATH=/Users/ashleyconnor/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin
 
 # functions
-source $HOME/dotfiles/functions.sh
+source $HOME/.functions.sh
 
 # completion
 autoload -U compinit
