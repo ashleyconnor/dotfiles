@@ -1,0 +1,12 @@
+[user]
+  name = Ashley Connor
+  email = ash.connor@gmail.com
+  signingkey = DA4D6C1B1B4A08E275C912AFF1756B360B483C98
+[color]
+  ui = true
+[push]
+  default = simple
+[commit]
+  gpgsign = true
+[alias]
+  root = rev-parse --show-toplevel
