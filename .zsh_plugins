@@ -5,8 +5,7 @@ robbyrussell/oh-my-zsh path:plugins/colored-man-pages
 robbyrussell/oh-my-zsh path:plugins/battery
 robbyrussell/oh-my-zsh path:plugins/aws
 
-kiurchv/asdf.plugin.zsh
-
+zdharma/zsh-diff-so-fancy
 zsh-users/zsh-syntax-highlighting
 jimeh/zsh-peco-history
 woefe/git-prompt.zsh

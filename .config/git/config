@@ -10,3 +10,5 @@
   gpgsign = true
 [alias]
   root = rev-parse --show-toplevel
+[core]
+  pager = diff-so-fancy | less -FXRi
