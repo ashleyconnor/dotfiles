@@ -1,11 +1,13 @@
-robbyrussell/oh-my-zsh path:plugins/asdf
-robbyrussell/oh-my-zsh path:plugins/osx
-robbyrussell/oh-my-zsh path:plugins/git
-robbyrussell/oh-my-zsh path:plugins/colored-man-pages
-robbyrussell/oh-my-zsh path:plugins/battery
-robbyrussell/oh-my-zsh path:plugins/aws
+zplug "plugins/asdf",   from:oh-my-zsh
+zplug "plugins/osx",   from:oh-my-zsh
+zplug "plugins/git",   from:oh-my-zsh
+zplug "plugins/colored-man-pages",   from:oh-my-zsh
+zplug "plugins/battery",   from:oh-my-zsh
+zplug "plugins/aws",   from:oh-my-zsh
 
-zdharma/zsh-diff-so-fancy
-zsh-users/zsh-syntax-highlighting
-jimeh/zsh-peco-history
-woefe/git-prompt.zsh
+zplug "kiurchv/asdf.plugin.zsh", defer:2
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "jimeh/zsh-peco-history"
+zplug "woefe/git-prompt.zsh"
+
+zplug load 

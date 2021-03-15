@@ -1,10 +1,8 @@
 # tap repositories and their packages
-tap "getantibody/tap"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask"
 
-brew "antibody"
 brew "awscli"
 brew "bat"
 brew "coreutils"
@@ -25,6 +23,7 @@ brew "rsync"
 brew "wget"
 brew "yadm"
 brew "youtube-dl"
+brew "zplug"
 
 cask "aerial"
 cask "alfred"
