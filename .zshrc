@@ -1,11 +1,14 @@
-# init antibody
-source <(antibody init)
+# Zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
-# do not prompt to update (update via antibody)
-DISABLE_AUTO_UPDATE="true"
+source ~/.zsh_plugins
 
 # Customize to your needs...
 export PATH=/Users/ashleyconnor/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin
+
+# ASDF
+. $HOME/.asdf/asdf.sh
 
 # functions
 source $HOME/.functions.sh
@@ -60,15 +63,6 @@ alias unzipall='for z in *.zip; do unzip -o $z; done'
 
 # Set name of the theme to load.
 ZSH_THEME="robbyrussell"
-# set oh-my-zsh home
-export ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
-# antibody bundle oh-my-zsh
-antibody bundle robbyrussell/oh-my-zsh
-# enable Oh My Zsh
-source $ZSH/oh-my-zsh.sh
-
-# bundle and apply antigen plugins
-antibody bundle < ~/.zsh_plugins
 
 # dotenv
 eval "$(direnv hook zsh)"
@@ -77,4 +71,4 @@ eval "$(direnv hook zsh)"
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # Rust
-export PATH=$PATH:/Users/ashleyconno/.cargo/bin
+export PATH=$PATH:/Users/ashleyconnor/.cargo/bin
