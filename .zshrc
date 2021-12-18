@@ -1,14 +1,10 @@
-# Zplug
+# zplug
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
-
 source ~/.zsh_plugins
 
-# Customize to your needs...
-export PATH=/Users/ashleyconnor/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin
-
-# ASDF
-. $HOME/.asdf/asdf.sh
+# asdf
+. $(brew --prefix asdf)/asdf.sh
 
 # functions
 source $HOME/.functions.sh
@@ -32,7 +28,6 @@ SAVEHIST=4096
 
 # Enable extended globbing
 setopt extendedglob
-
 # Allow [ or ] whereever you want
 unsetopt nomatch
 
@@ -42,33 +37,35 @@ alias vim=nvim
 alias vi=nvim
 
 # Homebrew fix
-export PATH="$(brew --prefix)/bin:$PATH"
+export PATH="$(brew --prefix)/bin:/usr/local/sbin:$PATH"
 
 # Aliases
 alias b='bundle exec'
 # Change to the root level directory the current git repository
 alias cdg='cd $(git rev-parse --show-toplevel || pwd)'
 alias diff=colordiff
-alias get='git'
 alias ls='ls -hFG'
 alias l='ls'
 alias la='ls -la'
 alias ll='ls -l'
 alias top='top -s 5 -o cpu -stats pid,user,command,cpu,rsize,vsize,threads,state'
-alias dockup='eval "$(docker-machine env default)"'
 alias clear="clear && printf '\e[3J'"
 alias reset=clear && printf '[3J'
-export PATH="/usr/local/share/dotnet:$PATH"
 alias unzipall='for z in *.zip; do unzip -o $z; done'
 
-# Set name of the theme to load.
-ZSH_THEME="robbyrussell"
-
-# dotenv
+# direnv
 eval "$(direnv hook zsh)"
 
-# Elixir prompt
+# elixir prompt
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-# Rust
+# rust
 export PATH=$PATH:/Users/ashleyconnor/.cargo/bin
+
+# keybindings
+bindkey "^a" beginning-of-line
+bindkey "^e" end-of-line
+bindkey "^f" forward-char
+bindkey "^b" backward-char
+bindkey "^k" kill-line
+bindkey "^d" delete-char
