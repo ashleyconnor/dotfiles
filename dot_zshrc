@@ -31,20 +31,7 @@ alias vim=nvim
 alias vi=nvim
 
 # Aliases
-# Change to the root level directory the current git repository
-alias cdg='cd $(git rev-parse --show-toplevel || pwd)'
-alias diff=colordiff
-alias get='git'
-alias ls='ls -hFG'
-alias l='ls'
-alias la='ls -la'
-alias ll='ls -l'
-alias top='top -s 5 -o cpu -stats pid,user,command,cpu,rsize,vsize,threads,state'
-alias clear="clear && printf '\e[3J'"
-alias reset=clear && printf '[3J'
-alias unzipall='for z in *.zip; do unzip -o $z; done'
-alias grep='rg'
-alias cat='bat'
+source ~/.alias.zsh
 
 eval "$(direnv hook zsh)"
 
