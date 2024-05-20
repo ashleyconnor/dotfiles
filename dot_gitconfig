@@ -1,0 +1,38 @@
+[user]
+	name = Ashley Connor
+	email = ash.connor@gmail.com
+[color]
+	ui = true
+[push]
+	default = current
+	autosetupremote = true
+[core]
+	excludesfile = /Users/ashleyconnor/.gitignore_global
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true    # use n and N to move between diff sections
+	light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+	line-numbers = true
+[merge]
+	conflictstyle = diff3
+	tool = diff3
+[diff]
+	colorMoved = default
+[commit]
+	gpgsign = true
+[alias]
+	root = rev-parse --show-toplevel
+[init]
+	defaultBranch = main
+[user]
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMg0UJ7SM9PZ7JNSMn1cQoF4MiDGjc+Sm5RF8o+u7EAwfK7eCyle79YAZWcwcs+IggDYSIpPESGDNW6f8240s3kJDELdwfwfy60QghyCjdf73PrES8JynQsclrfMQTkhx+JGswdHPYRdASKK4jocpxw6wngvAF8xSbBkoIYRRvPlesm18Um0joeEJGSdrIILRTlcUH2GHPDtC15hyfy9CkcAM3/e9W1UcTjVk22RtByg/HedJEZbqZp3nsze37FfNffnFbol3YY6DmmIk4chGNAmmCGlN4iPGbkl6B0h75QI0EKxA3SaSQnsVkIzI/393QEXgBhuApZY/hEWxb7kW/
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+	gpgsign = true
+[core]
+	editor = vim
