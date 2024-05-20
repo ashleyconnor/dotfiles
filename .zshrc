@@ -3,15 +3,15 @@ export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 source ~/.zsh_plugins
 
-# asdf
-. $(brew --prefix asdf)/asdf.sh
-
 # functions
 source $HOME/.functions.sh
 
+# options
+source $HOME/.options.zsh
+
 # completion
-autoload -U compinit
-compinit
+source $HOME/.completions.zsh
+autoload -Uz compinit && compinit
 
 # makes color constants available
 autoload -U colors
@@ -21,29 +21,20 @@ colors
 export CLICOLOR=1
 
 # history settings
-setopt hist_ignore_all_dups inc_append_history
 HISTFILE=~/.zhistory
 HISTSIZE=4096
 SAVEHIST=4096
-
-# Enable extended globbing
-setopt extendedglob
-# Allow [ or ] whereever you want
-unsetopt nomatch
 
 # Editor
 export EDITOR='nvim'
 alias vim=nvim
 alias vi=nvim
 
-# Homebrew fix
-export PATH="$(brew --prefix)/bin:/usr/local/sbin:$PATH"
-
 # Aliases
-alias b='bundle exec'
 # Change to the root level directory the current git repository
 alias cdg='cd $(git rev-parse --show-toplevel || pwd)'
 alias diff=colordiff
+alias get='git'
 alias ls='ls -hFG'
 alias l='ls'
 alias la='ls -la'
@@ -52,8 +43,9 @@ alias top='top -s 5 -o cpu -stats pid,user,command,cpu,rsize,vsize,threads,state
 alias clear="clear && printf '\e[3J'"
 alias reset=clear && printf '[3J'
 alias unzipall='for z in *.zip; do unzip -o $z; done'
+alias grep='rg'
+alias cat='bat'
 
-# direnv
 eval "$(direnv hook zsh)"
 
 # elixir prompt
@@ -61,6 +53,16 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 # rust
 export PATH=$PATH:/Users/ashleyconnor/.cargo/bin
+
+
+# Rye Python
+source "$HOME/.rye/env"
+
+# Zoxide
+eval "$(zoxide init zsh)"
+
+# ASDF Go nag
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
 # keybindings
 bindkey "^a" beginning-of-line
