@@ -1,14 +1,25 @@
-zplug "plugins/asdf", from:oh-my-zsh
+zplug "asdf-vm/asdf", use: "asdf.sh"
+
+zplug "plugins/history", from:oh-my-zsh
 zplug "plugins/osx", from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "plugins/battery", from:oh-my-zsh
 zplug "plugins/aws", from:oh-my-zsh
+zplug "plugins/command-not-found", from:oh-my-zsh
 
 zplug "kiurchv/asdf.plugin.zsh", defer:2
+zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "jimeh/zsh-peco-history"
+zplug "zsh-users/zsh-completions"
+zplug "junegunn/fzf", as:command, hook-build:"./install --bin", use:"bin/{fzf-tmux,fzf}"
+zplug "junegunn/fzf", use:"shell/*.zsh"
+zplug "Aloxaf/fzf-tab"
 zplug "woefe/git-prompt.zsh"
+zplug "mafredri/zsh-async", from:"github", use:"async.zsh"
+zplug "sindresorhus/pure", use:"pure.zsh", from:"github", as:"theme"
+
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
