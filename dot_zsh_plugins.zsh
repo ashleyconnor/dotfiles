@@ -1,5 +1,4 @@
-zplug "asdf-vm/asdf", use: "asdf.sh"
-zplug "kiurchv/asdf.plugin.zsh", defer:2
+zplug "wintermi/zsh-mise"
 
 zplug "plugins/history", from:oh-my-zsh
 zplug "plugins/osx", from:oh-my-zsh
@@ -9,6 +8,7 @@ zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/aws", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
 
+zplug "sunlei/zsh-ssh"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"

@@ -10,32 +10,17 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+require('lazy').setup("plugins_lazy")
 
-require("lazy").setup({
-  "nvim-lua/plenary.nvim",
-  "folke/which-key.nvim",
-  "nvim-telescope/telescope.nvim",
-  {
-    "folke/tokyonight.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-    require("nvim-treesitter.configs").setup({
-      ensure_installed = { "elixir", "eex", "heex" },
-      highlight = { enable = true },
-      indent = { enable = true },
-    })
-    end,
-  },
-  "fatih/vim-go",
-})
+require('pluginconfig')
 
-vim.cmd[[colorscheme tokyonight]]
+local set = vim.opt
+
+set.tabstop = 2
+set.shiftwidth = 2
+set.expandtab = true
+set.smartindent = true
+
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
