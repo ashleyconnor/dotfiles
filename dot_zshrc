@@ -1,10 +1,10 @@
 # zplug
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
-source ~/.zsh_plugins
+source ~/.zsh_plugins.zsh
 
 # functions
-source $HOME/.functions.sh
+source $HOME/.functions.zsh
 
 # options
 source $HOME/.options.zsh
@@ -41,12 +41,8 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # rust
 export PATH=$PATH:/Users/ashleyconnor/.cargo/bin
 
-
 # Rye Python
 source "$HOME/.rye/env"
-
-# Zoxide
-eval "$(zoxide init zsh)"
 
 # ASDF Go nag
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
@@ -58,3 +54,6 @@ bindkey "^f" forward-char
 bindkey "^b" backward-char
 bindkey "^k" kill-line
 bindkey "^d" delete-char
+
+# SSH Agent
+export SSH_AUTH_SOCK=/Users/ashleyconnor/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
